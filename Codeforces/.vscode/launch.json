@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++.exe - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "cmd": [
+                        "g++.exe",
+                        "-std=c++17",
+                        "${file}",
+                        "-o",
+                        "${file_base_name}.exe",
+                        "&&",
+                        "${file_base_name}.exe<inputf.in>outputf.in"
+                    ],
+                    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+                    "shell": true,
+                    "working_dir": "$file_path",
+                    "selector": "source.cpp"
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
+        }
+    ]
+}
