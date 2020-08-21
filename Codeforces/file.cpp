@@ -1,6 +1,5 @@
 #include <iostream>
-#include <stdio.h>
-#include <set>
+#include <algorithm>
 
 
 using namespace std;
@@ -8,22 +7,28 @@ using namespace std;
 #define endl '\n'
 #define fast  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-typedef  pair < int, int > pairs;
+
 
 int main()
 {
     fast;
-    int t, n, r, name, sub;
-    cin >> t;
-    for( int i = 1; i <= t; i++ ){
-        cin >> n >> r;
-        set < pairs > s; 
-        for( int j = 0; j < r; j++ ){
-            cin >> name >> sub;
-            s.insert( make_pair( name, sub ) );
+    int n, cnt = 1, ans = 0;
+    int first, second;
+    cin >> n >> first;
+    for( int i = 1; i < n; i++ ){ 
+        cin >> second;
+        if( first <=  second ){
+            cnt++;
+            ans = max( cnt, ans );
         }
-        if( s.size() == r ) printf("Scenario #%d: possible\n", i);
-        else                printf("Scenario #%d: impossible\n", i); 
+        else cnt = 1;  
+        first = second;
     }
+
+    ans = max( ans, 1 );
+    
+    cout << ans << endl;
+    
+
     return 0;
 }
