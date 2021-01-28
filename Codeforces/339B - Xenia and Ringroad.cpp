@@ -10,13 +10,14 @@ int main()
     fast;
     int n, m;
     cin >> n >> m;
-    int a, pos = 1; 
-    long long sum = 0;
+    int a, tmp = 0, pos = 1, sum = 0;
     for( int i = 0; i < m; ++i ) {
         cin >> a;
-        sum += pos <= a ? a - pos:(n - pos) + a;
-        pos = a;
+        if(tmp == a) continue;
+        sum += pos < a ? a - pos:n - pos + n - a;
+        pos = tmp = a;
     }
+
     cout << sum << endl;
     return 0;
 }

@@ -8,14 +8,12 @@ using namespace std;
 int main()
 {
     fast;
-    int n, m;
-    cin >> n >> m;
-    int a, pos = 1; 
-    long long sum = 0;
-    for( int i = 0; i < m; ++i ) {
-        cin >> a;
-        sum += pos <= a ? a - pos:(n - pos) + a;
-        pos = a;
+    int a[] = { 100, 20, 10, 5, 1 };
+    int num, sum = 0; 
+    cin >> num;
+    for( int i = 0; i < 5; i++ ){
+        sum += num / a[i];
+        num %= a[i];
     }
     cout << sum << endl;
     return 0;

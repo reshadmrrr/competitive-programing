@@ -3,8 +3,13 @@
 using namespace std;
 
 #define si( a ) scanf( "%d" , &a )
+#define ss( a ) scanf( "%s" , &a )
+#define sll( a ) scanf( "%lld" , &a )
+#define pfsn( a ) printf( "%s\n", s );
+#define pfn() printf("\n");
 #define pb( a ) push_back( a )
 #define all( a ) a.begin(), a.end()
+#define allrv( a ) a.rbegin(), a.rend()
 #define endl '\n'
 #define fast  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define READ( f ) freopen( f, "r", stdin )
@@ -31,31 +36,26 @@ void sieve( int MAX ){
     }
 } */ 
 
+// bool isOdd( int a ) { return a % 2 != 0; }
+// bool isEven( int a ) { return a % 2 == 0; }
+// binary exponential O(logN) a. k. a. powerfinding. 
+ /* ll bipow( ll a, ll b ) {
+    ll result = 1;
+    while( b > 0 ){
+        if( b % 2 == 1 ) result = ( result * a) % M;
+        a = ( a * a ) % M;
+        b /= 2; 
+    } 
+    return result;
+} */ 
 
+/*
+bool coprime(int a, int b) {return  __gcd(a, b) == 1 ? true : false;}
+*/
 int main()
 {
     fast;
-    vi v;
-    v.pb( 1 );#define MAX 1000000001
-vector < bool > prime(MAX, true); 
 
-void sieve( int MAX ){
-    prime[0] = prime[1] = false;
-    for( int i = 2; i <= n; i++ ){
-        if( prime[i] and (ll) i * i <= n )
-            for( int j = i * i; j <= n; j += i)
-                prime[j] = false; 
-    }
-}
-
-
-    ll yo = 1;
-    v.pb( 2 );
-    cout << yo << endl; 
-
-    //for(auto u : v      ) cout << u << endl;
-    if( 2 % 10 == 2 ) 
-    cout << "Ok" << endl;
 
     return 0;
 }
